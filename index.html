@@ -179,7 +179,7 @@
                 <span class="hidden md:inline">|</span>
                 <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt"></i> Granada, España</span>
                 <span class="hidden md:inline">|</span>
-                <span class="flex items-center gap-2"><i class="fas fa-users"></i> <span data-i18n="pax">40 Pax Estimados</span></span>
+                <span class="flex items-center gap-2"><i class="fas fa-users"></i> <span data-i18n="pax">38 Pax Estimados</span></span>
             </div>
         </div>
     </div>
@@ -584,7 +584,7 @@
                         </td>
                         <td class="text-center text-gray-600">Global</td>
                         <td class="text-right text-gray-600">-</td>
-                        <td class="text-right font-medium">€ 2.200,00</td>
+                        <td class="text-right font-medium">€ 1.050,00</td>
                     </tr>
                     <tr>
                         <td>
@@ -600,8 +600,8 @@
                             <div class="text-xs text-gray-500" data-i18n="act_disco_desc">Incluye 5 botellas y 70 refrescos</div>
                         </td>
                         <td class="text-center text-gray-600">1 noche</td>
-                        <td class="text-right text-gray-600">€ 750,00</td>
-                        <td class="text-right font-medium">€ 750,00</td>
+                        <td class="text-right text-gray-600">€ 1.900,00</td>
+                        <td class="text-right font-medium">€ 1.900,00</td>
                     </tr>
                     </tbody>
                 </table>
@@ -629,6 +629,13 @@
                             <div class="text-xs text-gray-500" data-i18n="log_bcn_desc">Ida y vuelta (20 pax)</div>
                         </td>
                         <td class="text-right font-medium">€ 2.259,60</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="font-semibold text-gray-700" data-i18n="log_intl">Vuelos Internacionales</div>
+                            <div class="text-xs text-gray-500" data-i18n="log_intl_desc">18 Personas (A cotizar)</div>
+                        </td>
+                        <td class="text-right font-medium text-gray-400">Pendiente de cotizar</td>
                     </tr>
                     <tr>
                         <td>
@@ -792,7 +799,7 @@
             es: {
                 hero_subtitle: "Propuesta de Evento Corporativo",
                 date: "10 - 13 Marzo 2026",
-                pax: "40 Pax Estimados",
+                pax: "38 Pax Estimados",
                 nav_summary: "Resumen",
                 nav_accom: "Alojamiento",
                 nav_options: "Opciones Hotel",
@@ -894,7 +901,7 @@
             en: {
                 hero_subtitle: "Corporate Event Proposal",
                 date: "March 10 - 13, 2026",
-                pax: "40 Pax Est.",
+                pax: "38 Pax Est.",
                 nav_summary: "Summary",
                 nav_accom: "Accommodation",
                 nav_options: "Hotel Options",
@@ -1000,7 +1007,7 @@
         function toggleLanguage() {
             currentLang = currentLang === 'es' ? 'en' : 'es';
             const elements = document.querySelectorAll('[data-i18n]');
-            
+
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[currentLang][key]) {
