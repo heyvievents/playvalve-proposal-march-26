@@ -44,7 +44,7 @@
             overflow: hidden;
             transition: transform 0.3s ease;
         }
-        
+
         /* Decoración sutil en esquinas */
         .paper-sheet::before {
             content: '';
@@ -98,7 +98,7 @@
         .feature-icon {
             @apply flex flex-col items-center gap-1 text-xs text-[#C8B29B] font-medium;
         }
-        
+
         .hotel-card-price {
             font-size: 1.5rem;
             color: var(--color-beige);
@@ -115,6 +115,39 @@
         .footer-logo img {
             max-height: 120px;
             width: auto;
+        }
+
+        /* --- ESTILOS PARA IMPRESIÓN (PDF) --- */
+        @media print {
+            .lang-switch, nav, button, .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+            .paper-sheet {
+                box-shadow: none;
+                border: 1px solid #eee;
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+            }
+            .hero-bg {
+                height: auto !important;
+                min-height: 300px;
+            }
+            header {
+                box-shadow: none;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            /* Asegurar que los colores de fondo se impriman */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
     </style>
 </head>
@@ -146,7 +179,7 @@
                 <span class="hidden md:inline">|</span>
                 <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt"></i> Granada, España</span>
                 <span class="hidden md:inline">|</span>
-                <span class="flex items-center gap-2"><i class="fas fa-users"></i> <span data-i18n="pax">38 Pax Estimados</span></span>
+                <span class="flex items-center gap-2"><i class="fas fa-users"></i> <span data-i18n="pax">40 Pax Estimados</span></span>
             </div>
         </div>
     </div>
@@ -459,7 +492,7 @@
                         </td>
                         <td class="text-center text-gray-600">Global</td>
                         <td class="text-right text-gray-600">-</td>
-                        <td class="text-right font-medium">€ 1.875,00</td>
+                        <td class="text-right font-medium">€ 1.525,00</td>
                     </tr>
                     </tbody>
                 </table>
@@ -467,7 +500,7 @@
             <div class="mt-6 flex justify-end">
                 <div class="text-right">
                     <span class="text-xs uppercase tracking-widest text-gray-500 block mb-1" data-i18n="subtotal_accom">Subtotal Alojamiento</span>
-                    <span class="text-2xl serif-font text-[#C8B29B]">€ 38.385,75</span>
+                    <span class="text-2xl serif-font text-[#C8B29B]">€ 38.035,75</span>
                 </div>
             </div>
         </section>
@@ -492,21 +525,21 @@
                     <tbody>
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-700" data-i18n="act_flamenco">Experiencia Flamenca</div>
+                            <div class="font-semibold text-gray-700" data-i18n="act_flamenco">Show Flamenco</div>
                             <div class="text-xs text-gray-500" data-i18n="act_flamenco_desc">Entrada Cueva Flamenca</div>
                         </td>
-                        <td class="text-center text-gray-600">38 pax</td>
+                        <td class="text-center text-gray-600">40 pax</td>
                         <td class="text-right text-gray-600">€ 25,00</td>
-                        <td class="text-right font-medium">€ 950,00</td>
+                        <td class="text-right font-medium">€ 1.000,00</td>
                     </tr>
                     <tr>
                         <td>
                             <div class="font-semibold text-gray-700" data-i18n="act_alhambra">Visita La Alhambra</div>
                             <div class="text-xs text-gray-500" data-i18n="act_alhambra_desc">Entradas completas + Guía Privado Inglés</div>
                         </td>
-                        <td class="text-center text-gray-600">38 pax</td>
+                        <td class="text-center text-gray-600">40 pax</td>
                         <td class="text-right text-gray-600">Var.</td>
-                        <td class="text-right font-medium">€ 1.740,00</td>
+                        <td class="text-right font-medium">€ 1.810,00</td>
                     </tr>
                     <tr class="bg-heyvi-light bg-opacity-30">
                         <td colspan="4" class="py-2 px-2 text-xs font-bold text-[#C8B29B] uppercase tracking-wide" data-i18n="snow_day">Día de Nieve (Sierra Nevada)</td>
@@ -532,9 +565,9 @@
                         <td>
                             <div class="font-semibold text-gray-700" data-i18n="forfait">Forfait Montaña</div>
                         </td>
-                        <td class="text-center text-gray-600">38 pax</td>
+                        <td class="text-center text-gray-600">40 pax</td>
                         <td class="text-right text-gray-600">€ 65,00</td>
-                        <td class="text-right font-medium">€ 2.470,00</td>
+                        <td class="text-right font-medium">€ 2.600,00</td>
                     </tr>
                     <tr>
                         <td>
@@ -546,15 +579,24 @@
                     </tr>
                     <tr>
                         <td>
+                            <div class="font-semibold text-gray-700" data-i18n="act_ski_lessons">Clases de Esquí</div>
+                            <div class="text-xs text-gray-500">Monitor Privado</div>
+                        </td>
+                        <td class="text-center text-gray-600">Global</td>
+                        <td class="text-right text-gray-600">-</td>
+                        <td class="text-right font-medium">€ 2.200,00</td>
+                    </tr>
+                    <tr>
+                        <td>
                             <div class="font-semibold text-gray-700" data-i18n="act_snowshoes">Raquetas de Nieve</div>
                         </td>
-                        <td class="text-center text-gray-600">52 unid</td>
-                        <td class="text-right text-gray-600">Var.</td>
+                        <td class="text-center text-gray-600">17 unid</td>
+                        <td class="text-right text-gray-600">€ 52,00</td>
                         <td class="text-right font-medium">€ 884,00</td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-700">Discoteca Aliator</div>
+                            <div class="font-semibold text-gray-700">Discoteca</div>
                             <div class="text-xs text-gray-500" data-i18n="act_disco_desc">Incluye 5 botellas y 70 refrescos</div>
                         </td>
                         <td class="text-center text-gray-600">1 noche</td>
@@ -567,7 +609,7 @@
             <div class="mt-6 flex justify-end">
                 <div class="text-right">
                     <span class="text-xs uppercase tracking-widest text-gray-500 block mb-1" data-i18n="subtotal_act">Subtotal Actividades</span>
-                    <span class="text-2xl serif-font text-[#C8B29B]">€ 12.714,00</span>
+                    <span class="text-2xl serif-font text-[#C8B29B]">€ 15.164,00</span>
                 </div>
             </div>
         </section>
@@ -590,22 +632,28 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-700" data-i18n="log_intl">Vuelos Internacionales</div>
-                            <div class="text-xs text-gray-500" data-i18n="log_intl_desc">18 Personas (A cotizar)</div>
+                            <div class="font-semibold text-gray-700" data-i18n="log_transfers_sn">Transfers Sierra Nevada</div>
+                            <div class="text-xs text-gray-500" data-i18n="log_transfers_sn_desc">40 pax Ida y Vuelta</div>
                         </td>
-                        <td class="text-right font-medium text-gray-400">Pdt.</td>
+                        <td class="text-right font-medium">€ 2.546,00</td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-700" data-i18n="log_transfers">Traslados Aeropuerto</div>
-                            <div class="text-xs text-gray-500" data-i18n="log_transfers_desc">BCN & Granada (Est.)</div>
+                            <div class="font-semibold text-gray-700" data-i18n="log_transfers_ap">Transfers Aeropuerto</div>
+                            <div class="text-xs text-gray-500" data-i18n="log_transfers_ap_desc">Granada - Hotel (I/V)</div>
                         </td>
-                        <td class="text-right font-medium">Incl. / Pdt.</td>
+                        <td class="text-right font-medium">€ 370,00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="font-semibold text-gray-700" data-i18n="log_extra">Extras Transfers</div>
+                        </td>
+                        <td class="text-right font-medium">€ 500,00</td>
                     </tr>
                     </tbody>
                 </table>
                 <div class="mt-4 text-right">
-                    <span class="text-xl serif-font text-[#C8B29B]">€ 2.259,60*</span>
+                    <span class="text-xl serif-font text-[#C8B29B]">€ 5.675,60</span>
                     <p class="text-[10px] text-gray-400 mt-1" data-i18n="log_pending">*Pendiente de traslados finales</p>
                 </div>
             </section>
@@ -620,29 +668,42 @@
                     <tbody>
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-700" data-i18n="fb_welcome">Pica Pica Bienvenida</div>
-                            <div class="text-xs text-gray-500" data-i18n="fb_welcome_desc">Martes (38 pax)</div>
+                            <div class="font-semibold text-gray-700" data-i18n="fb_welcome">Pica Pica Martes</div>
+                            <div class="text-xs text-gray-500">40 pax x €40</div>
                         </td>
-                        <td class="text-right font-medium">€ 1.520,00</td>
+                        <td class="text-right font-medium">€ 1.600,00</td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-700" data-i18n="fb_meals">Almuerzos & Cenas</div>
-                            <div class="text-xs text-gray-500" data-i18n="fb_meals_desc">Miércoles & Jueves (Est. €40-50pp)</div>
+                            <div class="font-semibold text-gray-700" data-i18n="fb_meals_tue">Cena Martes</div>
+                            <div class="text-xs text-gray-500">40 pax x €70</div>
                         </td>
-                        <td class="text-right font-medium">€ 5.320,00</td>
+                        <td class="text-right font-medium">€ 2.800,00</td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-700" data-i18n="fb_others">Otros / Bebidas</div>
-                            <div class="text-xs text-gray-500" data-i18n="fb_others_desc">A determinar</div>
+                            <div class="font-semibold text-gray-700" data-i18n="fb_meals_wed">Comidas Miércoles</div>
+                            <div class="text-xs text-gray-500">Almuerzo + Cena</div>
                         </td>
-                        <td class="text-right font-medium text-gray-400">Pdt.</td>
+                        <td class="text-right font-medium">€ 4.400,00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="font-semibold text-gray-700" data-i18n="fb_meals_thu">Comidas Jueves</div>
+                            <div class="text-xs text-gray-500">Almuerzo + Cena</div>
+                        </td>
+                        <td class="text-right font-medium">€ 5.600,00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="font-semibold text-gray-700" data-i18n="fb_extra">Extra Imprevistos</div>
+                        </td>
+                        <td class="text-right font-medium">€ 2.000,00</td>
                     </tr>
                     </tbody>
                 </table>
                 <div class="mt-4 text-right">
-                    <span class="text-xl serif-font text-[#C8B29B]">€ 6.840,00</span>
+                    <span class="text-xl serif-font text-[#C8B29B]">€ 16.400,00</span>
                 </div>
             </section>
         </div>
@@ -654,14 +715,13 @@
         <p class="text-gray-400 text-sm mb-8">Granada & Sierra Nevada | Marzo 2026</p>
 
         <div class="text-6xl md:text-7xl serif-font text-[#C8B29B] mb-2">
-            € 60.199<span class="text-3xl">,35</span>
+            € 75.275<span class="text-3xl">,35</span>
         </div>
-        <div class="text-sm text-gray-400 font-semibold mb-8" data-i18n="total_vat">+ IVA</div>
 
         <p class="text-xs text-gray-400 uppercase tracking-wider mb-8" data-i18n="total_disclaimer">Impuestos incluidos donde corresponde · Sujeto a disponibilidad</p>
 
-        <button class="bg-[#C8B29B] text-white px-8 py-4 rounded shadow-lg hover:bg-[#b09b85] transition-colors uppercase tracking-widest text-sm font-semibold" data-i18n="btn_download">
-            Descargar PDF Detallado
+        <button onclick="window.print()" class="bg-[#C8B29B] text-white px-8 py-4 rounded shadow-lg hover:bg-[#b09b85] transition-colors uppercase tracking-widest text-sm font-semibold flex items-center justify-center gap-2 mx-auto" data-i18n="btn_download">
+            <i class="fas fa-print"></i> Imprimir / Guardar como PDF
         </button>
     </section>
 
@@ -732,7 +792,7 @@
             es: {
                 hero_subtitle: "Propuesta de Evento Corporativo",
                 date: "10 - 13 Marzo 2026",
-                pax: "38 Pax Estimados",
+                pax: "40 Pax Estimados",
                 nav_summary: "Resumen",
                 nav_accom: "Alojamiento",
                 nav_options: "Opciones Hotel",
@@ -768,7 +828,7 @@
                 // Actividades Tabla
                 sec_activities_title: "2. Actividades y Experiencias",
                 col_qty: "Cantidad",
-                act_flamenco: "Experiencia Flamenca",
+                act_flamenco: "Show Flamenco",
                 act_flamenco_desc: "Entrada Cueva Flamenca",
                 act_alhambra: "Visita La Alhambra",
                 act_alhambra_desc: "Entradas completas + Guía Privado Inglés",
@@ -778,6 +838,7 @@
                 act_equip_desc: "Bastones, Esquís, Botas",
                 forfait: "Forfait Montaña",
                 act_insurance: "Seguro Viaje / Ski",
+                act_ski_lessons: "Clases de Esquí",
                 act_snowshoes: "Raquetas de Nieve",
                 act_disco_desc: "Incluye 5 botellas y 70 refrescos",
                 subtotal_act: "Subtotal Actividades",
@@ -788,16 +849,20 @@
                 log_bcn_desc: "Ida y vuelta (20 pax)",
                 log_intl: "Vuelos Internacionales",
                 log_intl_desc: "18 Personas (A cotizar)",
-                log_transfers: "Traslados Aeropuerto",
-                log_transfers_desc: "BCN & Granada (Est.)",
+                log_transfers_sn: "Transfers Sierra Nevada",
+                log_transfers_sn_desc: "40 pax Ida y Vuelta",
+                log_transfers_ap: "Transfers Aeropuerto",
+                log_transfers_ap_desc: "Granada - Hotel (I/V)",
+                log_extra: "Extras Transfers",
                 log_pending: "*Pendiente de traslados finales",
 
                 sec_fb_title: "4. Alimentos y Bebidas",
-                fb_welcome: "Pica Pica Bienvenida",
+                fb_welcome: "Pica Pica Martes",
                 fb_welcome_desc: "Martes (38 pax)",
-                fb_meals: "Almuerzos & Cenas",
-                fb_meals_desc: "Miércoles & Jueves (Est. €40-50pp)",
-                fb_others: "Otros / Bebidas",
+                fb_meals_tue: "Cena Martes",
+                fb_meals_wed: "Comidas Miércoles",
+                fb_meals_thu: "Comidas Jueves",
+                fb_extra: "Extra Imprevistos",
                 fb_others_desc: "A determinar",
 
                 // Condiciones
@@ -820,9 +885,8 @@
 
                 // Footer & Total
                 total_title: "Presupuesto Estimado",
-                total_vat: "+ IVA",
                 total_disclaimer: "Impuestos incluidos donde corresponde · Sujeto a disponibilidad",
-                btn_download: "Descargar PDF Detallado",
+                btn_download: "Imprimir / Guardar como PDF",
                 footer_love: "Hecho con pasión para Playvalve.",
                 footer_disclaimer: "Todos los precios son estimativos y sujetos a cambios hasta la reserva final.",
                 lang_btn_text: "English Version"
@@ -830,7 +894,7 @@
             en: {
                 hero_subtitle: "Corporate Event Proposal",
                 date: "March 10 - 13, 2026",
-                pax: "38 Pax Est.",
+                pax: "40 Pax Est.",
                 nav_summary: "Summary",
                 nav_accom: "Accommodation",
                 nav_options: "Hotel Options",
@@ -866,7 +930,7 @@
                 // Act Table
                 sec_activities_title: "2. Activities & Experiences",
                 col_qty: "Qty",
-                act_flamenco: "Flamenco Experience",
+                act_flamenco: "Flamenco Show",
                 act_flamenco_desc: "Flamenco Cave Ticket",
                 act_alhambra: "Alhambra Visit",
                 act_alhambra_desc: "Full Tickets + Private English Guide",
@@ -876,6 +940,7 @@
                 act_equip_desc: "Poles, Skis, Boots",
                 forfait: "Mountain Pass",
                 act_insurance: "Travel / Ski Insurance",
+                act_ski_lessons: "Ski Lessons",
                 act_snowshoes: "Snowshoes",
                 act_disco_desc: "Includes 5 bottles and 70 soft drinks",
                 subtotal_act: "Activities Subtotal",
@@ -886,16 +951,20 @@
                 log_bcn_desc: "Round Trip (20 pax)",
                 log_intl: "International Flights",
                 log_intl_desc: "18 Pax (To be quoted)",
-                log_transfers: "Airport Transfers",
-                log_transfers_desc: "BCN & Granada (Est.)",
+                log_transfers_sn: "Sierra Nevada Transfers",
+                log_transfers_sn_desc: "40 pax Round Trip",
+                log_transfers_ap: "Airport Transfers",
+                log_transfers_ap_desc: "Granada - Hotel (R/T)",
+                log_extra: "Extra Transfers",
                 log_pending: "*Pending final transfers",
 
                 sec_fb_title: "4. Food & Beverage",
-                fb_welcome: "Welcome Pica Pica",
+                fb_welcome: "Tuesday Welcome Pica Pica",
                 fb_welcome_desc: "Tuesday (38 pax)",
-                fb_meals: "Lunch & Dinner",
-                fb_meals_desc: "Wed & Thu (Est. €40-50pp)",
-                fb_others: "Others / Drinks",
+                fb_meals_tue: "Tuesday Dinner",
+                fb_meals_wed: "Wednesday Meals",
+                fb_meals_thu: "Thursday Meals",
+                fb_extra: "Extra Unforeseen Expenses",
                 fb_others_desc: "TBD",
 
                 // Conditions
@@ -918,9 +987,8 @@
 
                 // Footer & Total
                 total_title: "Estimated Budget",
-                total_vat: "+ VAT",
                 total_disclaimer: "Taxes included where applicable · Subject to availability",
-                btn_download: "Download Detailed PDF",
+                btn_download: "Print / Save as PDF",
                 footer_love: "Made with passion for Playvalve.",
                 footer_disclaimer: "All prices are estimates and subject to change until final booking.",
                 lang_btn_text: "Versión Español"
